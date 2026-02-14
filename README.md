@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔖 Bookmark App
 
-## Getting Started
+A modern Bookmark Management Application built using Next.js, Supabase, and Tailwind CSS.
+Users can securely log in with Google Authentication, add bookmarks, and experience real-time updates.
 
-First, run the development server:
+--------------------------------------------------
 
-```bash
+🚀 Features
+
+- Google OAuth Authentication (Supabase Auth)
+- Add & Delete Bookmarks
+- Real-time updates using Supabase Realtime
+- Row Level Security (RLS)
+- Responsive UI
+- Instant UI updates
+
+--------------------------------------------------
+
+🛠️ Tech Stack
+
+Frontend: Next.js
+Backend: Supabase
+Styling: Tailwind CSS
+Auth: Google OAuth
+Deployment: Vercel
+
+--------------------------------------------------
+
+⚙️ Environment Variables
+
+Create .env.local file:
+
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+--------------------------------------------------
+
+🗄️ Supabase Setup
+
+1. Create Table: bookmarks
+
+Columns:
+id (uuid, primary key)
+user_id (uuid)
+title (text)
+url (text)
+created_at (timestamp)
+
+2. Enable RLS
+
+3. Create Policy:
+
+auth.uid() = user_id
+
+4. Enable Realtime (Insert, Update, Delete)
+
+--------------------------------------------------
+
+🔐 Google Auth Setup
+
+1. Create OAuth Client in Google Cloud
+2. Add redirect URL:
+https://YOUR_PROJECT_ID.supabase.co/auth/v1/callback
+
+3. Add Client ID & Secret in Supabase
+
+--------------------------------------------------
+
+🧪 Run Project
+
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+--------------------------------------------------
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🌐 Deployment
 
-## Learn More
+1. Push to GitHub
+2. Import project in Vercel
+3. Add env variables
+4. Deploy
 
-To learn more about Next.js, take a look at the following resources:
+--------------------------------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👨‍💻 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Atul Baranwal
 
-## Deploy on Vercel
+--------------------------------------------------
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ If you like this project, give it a star!
